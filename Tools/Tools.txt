@@ -1,0 +1,8 @@
+For Now, I have the following tools on my system
+
+
+JohnTheRipper(Offline password cracker): Installed
+BurpSuite (proxy tool): Downloaded, not installed
+Exiftools: Installed, helps unravel images mostly
+Binwalk: Installed, helps get detailed info regarding binary constitution of files
+strings: Installed, bash command to print every printable characters in the binary of an executable or file.

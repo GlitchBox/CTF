@@ -1,0 +1,9 @@
+### 13/12/2020
+This is an offline password cracker, used to crack passwords of files/directories/even databases.
+As the first example attempt, I used it to crack a password protected PDF. The "pdf2john.pl" gets us the hash info(meta info) of the password.
+Then the binary(executable) of the johnTheRipper tries to crack that hash info and figure out the password. Once you crack the hash, you find the password. Seeing the info on the terminal, I could speculate that PDF file used [md5, sha2 , rc4/aes] encryptions.
+
+John opens 4 threads(because I have 4 cpus). Since, John is written in C, it uses OpenMP threads.
+As a default behavior, John uses the 'single rule'(Don't know what it means) at first.
+Then john tries passwords from password.lst file. It's a file compiled with common passwords.
+Then John tries, 'Incremental ASCII' procedure. As far as I can guess, it tries all possible combinations of ASCII characters. The ultimate brute force.

@@ -1,0 +1,35 @@
+Category: Cryptography
+
+41 42 43 54 46 7B 34 35 43 31 31 5F 31 35 5F 55 35 33 46 55 4C 7D
+ 
+This is an alphanumeric representation. So, the numbers could be hexadecimal.
+Each character occupies 8 bits, because each hexadecimal character occupies 4 bits and each character is represented by 2 hexadecimal bits.
+Firstly, I will convert hexa into decimal and map the corresponding ascii value
+
+hexa  decimal   char
+41      65      A
+42		66		B
+43		67		C
+54		84		T
+46		70		F
+7B		123		{
+34		52		4
+35		53		5
+43		67		C
+31		49		1
+31		49		1
+5F		95		_
+31		49		1
+35		53		5
+5F		95		_
+55		85		U
+35		53		5
+33		51		3
+46		70		F
+55		85		U
+4C		76		L
+7D		125		}
+
+hence, the flag could be ABCTF{45C11_15_U53FUL}
+
+Turns out this indeeed was the flag. Simple Hex to ASCII mapping.
