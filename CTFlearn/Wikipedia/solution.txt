@@ -1,0 +1,5 @@
+Go to the wikipedia and look up the mentioned ip address.
+It's a user's contribution page. A user contribution page in the wikipedia lists the changes or contributions made by a user, ergo an IP user.
+So the page I am looking at, is the contribution list for the ip user(128.125.52.138). They contributed a line to the article called "Flag" in the wikipedia.
+Look at the "diff" tab. "diff" denotes to the differences between revisions made to "Flag" article. You can see the changes made by 128.125.52.138.
+They added a flag. Which is the flag I was looking for.
