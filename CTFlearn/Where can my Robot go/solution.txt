@@ -1,0 +1,26 @@
+Category: Misc.
+
+
+The comment box suggested that I should google. Apparently, google and a bit brain-using would do the trick.
+So I decided to google the name of the challenge.
+
+Hint: What does disallow tell robot?
+
+the first thing that popped up when I googled is the term "SEO" which stands for "Search Engine Optimaization".
+
+#####robot.txt Theory: 1) https://neilpatel.com/blog/robots-txt/#:~:text=txt%20file%2C%20also%20known%20as,about%20to%20visit%20a%20site
+					   2) https://developers.google.com/search/docs/advanced/robots/create-robots-txt?hl=en&visit_id=637491463791469476-4118123163&rd=1
+
+robots.txt file is a part of every website. It is designed to work with search engines. It helps boost SEO.
+robots.txt is also known as robots exclusion protocol/standard. It tells web robots, in most cases, search engines, which pages to crawl and which pages not to crawl on my website.
+Every crawler, such as the GoogleBot has a crawl budget. You want the crawler to crawl your most valuable and accessed contents/pages so that the crawler regards
+you website highly. 
+robots.txt can contain 3 commands. 
+		1) User-Agent denotes a particular webcrawler. * denotes all the webcrawlers
+		2) Disallow: tells the webcrawler to stay off that URL. For instance-> Disallow: /item
+		3) allow: if you want to allow a crawler to access a particular URL that is a child directory in a Disallowed parent directory. For instance-> 
+		Allow: /item/images
+		4) nofollow: don't follow any links from this URL
+		5) noindex: Even though the bot is told not to crawl a URL when Disallow is used, Disallow doesn't prevent it from being indexed. noindex does exactly that.
+
+Solution: go to the robots.txt file of the ctflearn.com. :v go to the html mentioned under disallowed. There is the flag xD
