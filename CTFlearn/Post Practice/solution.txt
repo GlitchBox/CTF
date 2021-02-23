@@ -1,0 +1,4 @@
+Use postman to send GET request to the URL.
+In the returned html, you will notice that username and password has been given in comments.
+Send a POST request this time to mentioned URL, attach the given username and password in the body of the POST request.
+Voila! The flag will be in the returned html.

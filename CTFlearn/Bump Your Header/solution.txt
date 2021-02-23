@@ -1,0 +1,7 @@
+Use POSTMAN again.
+Send GET request to the given URL. In the returned HTML, the message will say that you haven't accessed the URL using the correct User-Agent.
+And there will also be a comment in that URL. That comment is the required User-Agent. Send GET request again setting the User-Agent field in the
+header to the text found in the comment.
+
+This time, another message will show. The message is a clue as to how to set your Referer field in the header.
+Set the Referer field accordingly and you will find the flag.
