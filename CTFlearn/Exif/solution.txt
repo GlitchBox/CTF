@@ -1,0 +1,16 @@
+I may have used exiftool before but I completely forgot about it, except for the name of the tool :p. 
+
+Anyways, I decided to read up extensively (https://adamtheautomator.com/exiftool/) on the usage of the tool. I learned the basic syntax and some heavily used flags to use it with. Following are some flags I learned to use:
+
+1. "-g" or "-G": As I have learned, a file will have several metadata flags. These flags will be grouped under several groups. Such as ExifTool, FileName, ICC_Profile, Composite etc. The flag "-G" or "-g" helps us see the group each metadata is included in.
+
+2. "-a": The same metadata name could appear under several groups. Such as "ImageHeight" could be nested under both "File" and "Composite". If "-a" is not included, the duplicate metadata flag would not appear more than once. The inclusion of "-a" ensures that all metadata nested under all the groups appear despite being duplicate.
+
+3. "-s" : It removes the spaces in metadata name. Once the spaces in a metadata name is removed, it resembles that of the one on exiftool documentation.
+
+4. "-s -s" : It removes spaces in the metadata name. It also removes the spaces between the metadata and its value. 
+
+5. "-s -s -s" : It removes the metadata itself and shows the values
+
+So, the following script is the solution:
+exiftool -G -s -a 'Computer-Password-Security-Hacker - Copy.jpg' | grep {

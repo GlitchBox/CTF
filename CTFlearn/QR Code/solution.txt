@@ -1,0 +1,13 @@
+1) scan the qr code and extract the text
+2) The extracted output "c3ludCB2ZiA6IGEwX29icWxfczBldHJnX2RlX3BicXI=" still looks gibberish
+3) some kind of cipher or encoding has been applied to it
+4) think of the ciphers that may have been applied. XOR cipher could have been applied. Try brute XOR.
+5) Doesn't work
+6) Notice that the string ends in "=". Remember that "=" is used as a padding character in base64. Also the length of the text is a multiple of 4. You have a lead. Also use this website to figure out the possible encoding https://www.boxentriq.com/code-breaking/cipher-identifier
+
+7) Decode using base64. You have found "synt vf : a0_obql_s0etrg_de_pbqr"
+8) This seems to appear like a legit english sentence. 
+9) Try ceaser / rotation cipers with several rotation lengths. 
+10) 13 works
+11) Solution - QR code scan - decode base64 - caesar cipher (Rot13)
+14) Cyberchef has been heavily used for this problem

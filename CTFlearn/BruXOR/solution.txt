@@ -1,0 +1,15 @@
+The solution didn't occur to me. I had take the hints from the comments section. The "Brute XOR" encryption is applied to achieve the cipher text. The idea of the Brute XOR encryption is describe as follows:
+
+1. You have a plaintext A
+2. You have a key B
+3. Ciphertext = A ^ B
+
+According to the rules of XOR operation, if you only know the result of an operation but not either of the operands (the plaintext or the key), it's very difficult to find any operand. Let A ^ B = True. Now if A is True, then B has to be fault. The vice versa is also true. See? We can't be sure what either A or B is only from the value of A ^ B. 
+
+Here XOR cipher is at play. In other words, GIVEN CIPHERTEXT = KEY ^ PLAINTEXT. Depending on the length of the key, you will be left open to a lot of options. You will have to keep guessing a key and perform XOR with the ciphertext, until you land on something meaningful (hopefully the plaintext). 
+
+So, to solve this problem we had to guess (bruteforce) the key of the cipher and XOR the suspect key with the ciphertext and hope that we find the correct plaintext. In this scenario. Luckily the length of the key was 1 and the key was = 0x17 = 23 = a character on the ascii table
+
+For more info, go to https://www.geeksforgeeks.org/xor-cipher/#:~:text=XOR%20Encryption%20is%20an%20encryption,match%20with%20the%20correct%20one.
+
+I used this online tool - Cyberchef (https://gchq.github.io/CyberChef/#recipe=XOR_Brute_Force(1,100,0,'Standard',false,true,false,''))

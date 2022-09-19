@@ -1,0 +1,11 @@
+Theory: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/steganography
+
+The key was to use binwalk in an efficient manner. All this time I was trying to extract the file with -e flag. With this flag on, binwalk only extracts known 
+file types. Every time I ran binwalk with -e flag on, it would spit out an impenetrable zlib file. binwalk couldn't crack open the zlib file. The extraction process would go on and on, ceaselessly. 
+
+As it turns out, all I had to do is run a command which extracts a specific file type. The image had to images inside it. The second image contained the flag. I found out about the following command when I ran the man command for binwalk.
+
+ "-D, --dd=<type:ext:cmd>
+              Extract <type> signatures, give the files an extension of <ext>, and execute <cmd>"
+
+  Therefore, the final command I had to run to extract the png file was: 'binwalk -D "png image:png" PurpleThing.jpeg'

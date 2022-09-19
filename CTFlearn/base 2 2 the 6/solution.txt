@@ -1,0 +1,2 @@
+Just like the title says, the cryptic message at the end of the problem statement is encoded in 2^6=64bit encoding.
+Just use any online decoder and you will have the flag.

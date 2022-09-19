@@ -1,0 +1,15 @@
+1. To draw from previous experiences, I started with exiftool and used the following command:
+
+exiftool -s -a -G Snowboard.jpg | grep {
+
+Right on cue I found this flag - under the group, FILE and value to the metadata, comment: "CTFlearn{CTFIsEasy!!!}". But CTFLearn refused accept my answer and I was stumped. It didn't make sense, it seemed so obvious. Sth was definitely wrong. Maybe the entire website was glitching. I refreshed the tab a bunch of times, entered the same flag and expected a different response. Maybe it was Einstein who said, only a crazy person keeps trying the same thing and expect different things to happen. So, I was the proverbial crazy person. 
+
+Anyways, after having spent 10 minutes in admittedly utter confusion the impatient person in me urged to start reading the comments. Turns out the flag was a fake, duh! WAIT IT'S A FAKE! Okay... we are on to something. Someone wrote, "The real one is right next to the fake one". Okay, that was laying it on too thick. I fired up exiftool again - without the grep this time and kept investigating the metadata values. There it is, under the group FILE - there are two "comment" metadata. And yet, I distinctly remember reading here (https://adamtheautomator.com/exiftool/) that there cannot be two same metadata under the same group. Yes, it is permitted to have two (or more) metadata with same name under two (or more) separate groups. But one group cannot have two metadata with the same name! Something was definitely fishy. Next to that impostor(!) second comment flag, there was a weird string "Q1RGbGVhcm57U2tpQmFuZmZ9Cg=="
+
+This must be it. I remember that base64 encoding used == as padding. This string must be in base64 encoding. Before unraveling the encoding I entered the raw string on CTFLearn. But they refused to accept it as well. So, now I had only one recourse. I took that weird looking string and decoded it from base64 to utf-8 and BAM! I found the correct flag.
+
+BTW, use the binwalk, file tools while performing such investigations. They return pretty useful stuff too. binwalk shows what kind of information are there in the image and where in memory they begin. "file" elaborates a bit more and shows such information. 
+
+I saw from the output of "binwalk" that the file contained TIFF information besides JFIF and JPEG info. "file" showed what these info were. 
+
+PS: Turns out JFIF is a file standard that extends some information of the JPEG and alleviates the problem of lack of info. i.e. JFIF contains resolution info and instructions on how to use them. JPEG didn't have these info. For details read here https://graphicdesign.stackexchange.com/questions/109705/can-a-jpeg-contain-tiff-image-data
