@@ -1,0 +1,3 @@
+The solution is in the name of the problem. 
+
+Unzip - ls -al - open ThePassword - open ThePassword.txt - open the pdf with the password found in the text file
